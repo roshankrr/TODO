@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TODO</title>
+</head>
+
+<body>
+  <div id="main" class="w-full h-full  bg-black text-white">
+    <div class="form p-10">
+      <form action="/create" method="post">
+        <input type="text" class=" rounded-md w-full my-5 p-5 bg-slate-700" placeholder="Enter Title" name="Title">
+        <textarea class="block rounded-md  p-5 w-full bg-slate-700 resize-none" name="content"
+          placeholder="Write a discription"></textarea><br />
+        <button type="submit" class="p-3 rounded-md  bg-blue-700">Create Task</button>
+      </form>
+    </div>
+
+    <div class="cont w-full flex-wrap flex justify-center ">
+    <% if(files.length!=0){%>
+      <% files.forEach((value)=>{%>
+        <div
+          class="cards m-10 rounded-md  flex flex-col  text-center justify-center py-5 h-[14rem] w-[14rem] bg-slate-700">
+
+          <h1>
+            <%= value%>
+          </h1>
+          <a class="text-blue-300" href="/show/<%=value%>">Read More..</a>
+        </div>
+        <%})%>
+          <%} else{%> 
+            <div class="h-screen bg-black w-full p-10"><h1>No Files Yet!</h1></div>
+          <%}%>
+        </div>
+
+
+
+  </div>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
